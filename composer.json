@@ -38,5 +38,15 @@
     },
     "config": {
         "sort-packages": true
+    },
+    "extra": {
+        "laravel": {
+            "providers": [
+                "Just\\Amp\\Laravel\\AmpServiceProvider"
+            ],
+            "aliases": {
+                "AmpRouter": "Just\\Amp\\Laravel\\AmpRouteFacade"
+            }
+        }
     }
 }
