@@ -14,6 +14,10 @@ class AmpViewFactory extends Factory implements FactoryContract
      * @var string
      */
     protected $ampAffix;
+    /**
+     * @var string
+     */
+    protected $ampBoolName;
 
     /**
      * AmpViewFactory constructor.
@@ -22,10 +26,12 @@ class AmpViewFactory extends Factory implements FactoryContract
      * @param \Illuminate\View\ViewFinderInterface    $finder
      * @param \Illuminate\Contracts\Events\Dispatcher $events
      * @param string                                  $ampAffix
+     * @param string                                  $ampBoolName
      */
-    public function __construct(EngineResolver $engines, ViewFinderInterface $finder, Dispatcher $events, $ampAffix)
+    public function __construct(EngineResolver $engines, ViewFinderInterface $finder, Dispatcher $events, $ampAffix, $ampBoolName)
     {
         $this->ampAffix = $ampAffix;
+        $this->ampBoolName = $ampBoolName;
 
         parent::__construct($engines, $finder, $events);
     }
@@ -42,8 +48,15 @@ class AmpViewFactory extends Factory implements FactoryContract
         $routeName = $this->getContainer()->make('router')->currentRouteName();
 
         if (preg_match('/\.amp$/', $routeName)) {
-            $view .= $this->ampAffix;
+            if (isset($this->ampAffix))
+                $view .= $this->ampAffix;
+
+            if (isset($this->ampBoolName))
+                $data[$this->ampBoolName] = true;
         }
+
+        else if (isset($this->ampBoolName))
+            $data[$this->ampBoolName] = false;
 
         return parent::make($view, $data, $mergeData);
     }
