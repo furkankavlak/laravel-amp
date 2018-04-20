@@ -1,18 +1,13 @@
 {
-    "name": "JulianWels/laravel-amp",
+    "name": "wearejust/laravel-amp",
     "description": "Package that helps you set up AMP (Accelerated Mobile Pages) using Laravel",
     "keywords": [
+        "wearejust",
         "laravel-amp"
     ],
-    "homepage": "https://github.com/JulianWels/laravel-amp",
+    "homepage": "https://github.com/wearejust/amp",
     "license": "MIT",
     "authors": [
-        {
-            "name": ":Julian Wels",
-            "email": "julian@jwels.berlin",
-            "homepage": "https://jwels.berlin/",
-            "role": "Developer"
-        },
         {
             "name": ":Cees van Egmond",
             "email": "cees.vanegmond@wearejust.com",
@@ -30,12 +25,12 @@
     },
     "autoload": {
         "psr-4": {
-            "Wels\\Amp\\": "src"
+            "Just\\Amp\\": "src"
         }
     },
     "autoload-dev": {
         "psr-4": {
-            "Wels\\Amp\\Test\\": "tests"
+            "Just\\Amp\\Test\\": "tests"
         }
     },
     "scripts": {
@@ -47,10 +42,10 @@
     "extra": {
         "laravel": {
             "providers": [
-                "Wels\\Amp\\Laravel\\AmpServiceProvider"
+                "Just\\Amp\\Laravel\\AmpServiceProvider"
             ],
             "aliases": {
-                "AmpRouter": "Wels\\Amp\\Laravel\\AmpRouteFacade"
+                "AmpRouter": "Just\\Amp\\Laravel\\AmpRouteFacade"
             }
         }
     }

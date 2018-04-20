@@ -1,6 +1,6 @@
 <?php
 
-namespace Wels\Amp\Laravel;
+namespace Just\Amp\Laravel;
 
 use Illuminate\Contracts\Events\Dispatcher;
 use Illuminate\Contracts\View\Factory as FactoryContract;

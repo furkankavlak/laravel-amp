@@ -1,6 +1,6 @@
 <?php
 
-namespace Wels\Amp\Exceptions;
+namespace Just\Amp\Exceptions;
 
 use RuntimeException;
 

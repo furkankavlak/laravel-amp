@@ -7,7 +7,7 @@ This package makes it easy to integrate [AMP](https://www.ampproject.org/) in yo
 You can install the package via composer:
 
 ``` bash
-composer require JulianWels/laravel-amp
+composer require wearejust/laravel-amp
 ```
 
 Register the service provider in your app.php
@@ -16,11 +16,11 @@ Register the service provider in your app.php
 // app.php
 'providers' => [
     ...
-    Wels\Amp\Laravel\AmpServiceProvider::class,
+    Just\Amp\Laravel\AmpServiceProvider::class,
 ],
 'aliases' => [
     ...
-    'AmpRouter' => Wels\Amp\Laravel\AmpRouteFacade::class,
+    'AmpRouter' => Just\Amp\Laravel\AmpRouteFacade::class,
 ]
 ```
 

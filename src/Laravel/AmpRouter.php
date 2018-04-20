@@ -1,11 +1,11 @@
 <?php
 
-namespace Wels\Amp\Laravel;
+namespace Just\Amp\Laravel;
 
 use Illuminate\Config\Repository;
 use Illuminate\Routing\Router;
-use Wels\Amp\Exceptions\AmpRouteActionMustBeArray;
-use Wels\Amp\Exceptions\AmpRouteNameMustBeDefined;
+use Just\Amp\Exceptions\AmpRouteActionMustBeArray;
+use Just\Amp\Exceptions\AmpRouteNameMustBeDefined;
 
 class AmpRouter
 {
