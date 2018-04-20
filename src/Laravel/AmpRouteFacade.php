@@ -1,6 +1,6 @@
 <?php
 
-namespace Just\Amp\Laravel;
+namespace Wels\Amp\Laravel;
 
 use Illuminate\Support\Facades\Facade;
 

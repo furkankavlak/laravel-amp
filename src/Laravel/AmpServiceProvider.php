@@ -1,8 +1,8 @@
 <?php
 
-namespace Just\Amp\Laravel;
+namespace Wels\Amp\Laravel;
 
-use Just\Amp;
+use Wels\Amp;
 use Illuminate\Support\ServiceProvider;
 
 class AmpServiceProvider extends ServiceProvider

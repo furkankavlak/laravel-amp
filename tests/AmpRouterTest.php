@@ -1,6 +1,6 @@
 <?php
 
-namespace Just\Amp\Test;
+namespace Wels\Amp\Test;
 
 class AmpRouterTest extends \PHPUnit_Framework_TestCase
 {
