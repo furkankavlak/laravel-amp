@@ -52,8 +52,14 @@ class AmpServiceProvider extends ServiceProvider
 
             $finder = $app['view.finder'];
 
-            $env = new AmpViewFactory($resolver, $finder, $app['events'],
-                $app['config']->get('amp.view-affix'), $app['config']->get('amp.view-bool-name'));
+            $env = new AmpViewFactory(
+                $resolver,
+                $finder,
+                $app['events'],
+                $app['config']->get('amp.view-affix'),
+                $app['config']->get('amp.view-bool-name'),
+                $app['config']->get('amp.view-fallback')
+            );
 
             // We will also set the container instance on this view environment since the
             // view composers may be classes registered in the container, which allows
