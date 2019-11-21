@@ -38,10 +38,21 @@ class AmpRouter
 
         $router->macro('amp', function ($url, $action) use ($router, $config)
         {
-            $prefixed = trim($config->get('amp.prefix', 'gm'), '/');
-            $url = trim($url, '/');
+            $amp_url = $url;
 
-            $prefixed = sprintf('%s/%s', $prefixed, $url);
+            if ($config->get('amp.prefix')) {
+                $prefixed = trim($config->get('amp.prefix', 'gm'), '/');
+                $url = trim($url, '/');
+
+                $amp_url = sprintf('%s/%s', $prefixed, $amp_url);
+            }
+
+            if ($config->get('amp.suffix')) {
+                $suffixed = trim($config->get('amp.suffix'), '/');
+                $url = trim($url, '/');
+
+                $amp_url = sprintf('%s/%s', $amp_url, $suffixed);
+            }
 
             if (! is_array($action)) {
                 throw new AmpRouteActionMustBeArray(sprintf('Action for route [%s] must be an array', $url));
@@ -54,7 +65,7 @@ class AmpRouter
             $ampRouteName = $action['as'] . '.amp';
 
             $router->get($url, array_merge($action, ['amp' => $ampRouteName]));
-            $router->get($prefixed, array_merge($action, ['as' => $ampRouteName]));
+            $router->get($amp_url, array_merge($action, ['as' => $ampRouteName]));
         });
     }
 }
